@@ -1,0 +1,18 @@
+
+client: client.o
+	gcc -o client client.o
+
+client.o: client.c
+	gcc -c client.c
+
+client.c: server
+
+
+server: ex-select.o
+		gcc -o server ex-select.o
+
+ex-select.o: ex-select.c
+		gcc -c ex-select.c
+
+clean: 
+		rm *.o server client
